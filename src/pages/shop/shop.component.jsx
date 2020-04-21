@@ -16,7 +16,7 @@ class ShopPage extends React.Component{
 
     render(){
         const {collections} = this.state;
-        console.log(this.state.collections);
+        
         return(
             <div className='shop-page'>
                 {
