@@ -6,12 +6,12 @@ import ShopPage from './pages/shop/shop.component';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
 import Header from './components/header/header.component'
-import {auth, createUserProfileDocument} from './firebase/firebase.utils'
+import {auth, createUserProfileDocument, addCollectionAndItems} from './firebase/firebase.utils'
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect'
 import {selectCurrentUser} from './redux/user/user.selectors';
 import CheckoutPage from './pages/checkout/checkout.component';
-
+import {selectCollectionForPreview} from './redux/shop/shop.selectors';
 import {setCurrentUser} from './redux/user/user.action'
 class App extends React.Component {
 
@@ -33,7 +33,8 @@ class App extends React.Component {
         })
         
       }
-      setCurrentUser()  
+      setCurrentUser(userAuth);
+
       
     })
   }
@@ -60,7 +61,8 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
+  collectionsArray: selectCollectionForPreview
 })
 
 
