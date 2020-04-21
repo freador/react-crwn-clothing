@@ -19,10 +19,6 @@ const CartIcon = ({toggleCartHidden}) => (
 
 
 )
-const mapStateToProps = ({user: {currentUser}, cart: {hidden}}) =>  ({
-    currentUser,
-    hidden
-})
 
 
 const mapDispatchToProps = dispath => ({

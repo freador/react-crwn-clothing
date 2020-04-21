@@ -59,6 +59,9 @@ const mapStateToProps = ( ({user}) => ({
   currentUser: user.currentUser
 }))
 
+
+
+
 const mapDispathToProps = dispath => ({
   setCurrentUser: user => dispath( setCurrentUser(user))
 })
