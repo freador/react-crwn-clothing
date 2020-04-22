@@ -10,16 +10,33 @@ import { render } from 'react-dom';
 
 
 const CollectionPage = ({collection}) => {
-    const {title, items } = collection;
     
-    return (
-        <div className="collection">
-            <h2>
-                {title}
-                {items.map( item => ( <CollectionItem key={item.id} item={item}/>))}
-            </h2>
-        </div>
-    )
+    
+        
+        
+            if(collection != null){
+                const {title, items } = collection;
+                return(
+                    <div className="collection">
+                        <h2>
+                        {title}                
+                        </h2>
+                        {items.map( item => ( <CollectionItem key={item.id} item={item}/>))}
+                    </div>
+                )
+                
+            }else{
+                return(
+                    <div>
+                        <h2>Without products</h2>
+                    </div>                    
+                )
+                
+            }
+                
+            
+
+        
     
 }
 
